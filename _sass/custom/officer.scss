@@ -1,0 +1,22 @@
+.officer {
+  display: flex;
+  margin: $sp-4;
+
+  .officer-image {
+    height: 100px;
+    margin-right: $sp-4;
+  }
+
+  p,
+  .officer-name {
+    margin: $sp-1 !important;
+  }
+
+  .officer-pronouns {
+    @extend .label, .text-grey-dk-100, .bg-grey-lt-200;
+  }
+
+  .officer-meta {
+    @extend .text-grey-dk-000;
+  }
+}

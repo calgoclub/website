@@ -1,0 +1,12 @@
+#footer {
+  padding: 1em;
+} 
+
+#footer > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em 0 0.5em 0;
+}
+
+@import 'officer';
