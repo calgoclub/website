@@ -1,0 +1,16 @@
+title: Go Club at Berkeley
+description: The student-run go / baduk / weiqi club at UC Berkeley!
+theme: just-the-docs
+
+url: "https://www.ocf.berkeley.edu"
+baseurl: "/~goclub/jekyll/"
+
+search_enabled: false
+
+color_scheme: dark
+
+collections:
+  officers:
+    order:
+      - oski.md
+      - mathew.md
