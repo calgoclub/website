@@ -1,0 +1,46 @@
+name: Jekyll Build and 
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle config set --local path 'vendor/bundle'
+        bundle install
+
+    - name: Build Jekyll site
+      run: bundle exec jekyll build --config _config.yml -d build
+
+    - name: Deploy via rsync
+      run: |
+         echo "${{ secrets.SSH_KEY }}" > private_key
+         chmod 600 private_key
+         rsync -avz --exclude '.git*' --exclude 'private_key' build/ ${{ secrets.SSH_TARGET }}:/home/g/go/goclub/public_html/jekyll -e "ssh -i private_key -o StrictHostKeyChecking=no"
+         rm private_key
+   
+        #    - name: scp
+        #      run: 
+        #        echo "${{ secrets.SSH_KEY }}" > private_key
+        #        chmod 600 private_key
+        #        scp -rT "build/\*" ${{ secrets.SSH_TARGET }}:/home/g/go/goclub/public_html/jekyll
+        #        rm private_key
+   
