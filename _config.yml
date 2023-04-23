@@ -12,5 +12,6 @@ color_scheme: dark
 collections:
   officers:
     order:
-      - oski.md
+      - amy.md
+      - david.md
       - mathew.md
