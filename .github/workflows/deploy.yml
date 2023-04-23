@@ -1,4 +1,4 @@
-name: Jekyll Build and 
+name: Jekyll Build and
 
 on:
   push:
@@ -34,13 +34,5 @@ jobs:
       run: |
          echo "${{ secrets.SSH_KEY }}" > private_key
          chmod 600 private_key
-         rsync -avz --exclude '.git*' --exclude 'private_key' build/ ${{ secrets.SSH_TARGET }}:/home/g/go/goclub/public_html/jekyll -e "ssh -i private_key -o StrictHostKeyChecking=no"
+         rsync -avz --exclude '.git*' --exclude 'private_key' build/ ${{ secrets.SSH_TARGET }}:/home/g/go/goclub/public_html -e "ssh -i private_key -o StrictHostKeyChecking=no"
          rm private_key
-   
-        #    - name: scp
-        #      run: 
-        #        echo "${{ secrets.SSH_KEY }}" > private_key
-        #        chmod 600 private_key
-        #        scp -rT "build/\*" ${{ secrets.SSH_TARGET }}:/home/g/go/goclub/public_html/jekyll
-        #        rm private_key
-   
