@@ -3,7 +3,7 @@ description: The student-run go / baduk / weiqi club at UC Berkeley!
 theme: just-the-docs
 
 url: "https://www.ocf.berkeley.edu"
-baseurl: "/~goclub/jekyll/"
+baseurl: "/~goclub/"
 
 search_enabled: false
 
