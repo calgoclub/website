@@ -62,7 +62,6 @@ GEM
 
 PLATFORMS
   arm64-darwin-23
-  ruby
 
 DEPENDENCIES
   jekyll (~> 3.8.3)
@@ -70,4 +69,4 @@ DEPENDENCIES
   sassc (~> 2.1.0)
 
 BUNDLED WITH
-   2.5.5
+   2.4.22
