@@ -7,7 +7,7 @@ nav_order: 1
 # Welcome!
 
 We're a student-run organization dedicated to all things about go / weiqi /
-baduk. Our Spring 2024 meetings are at Evans Hall 939 at 7pm on
+baduk. Our Spring 2025 meetings are at Evans Hall 748 at 7pm on
 Tuesdays. Come join us! 
 
 
